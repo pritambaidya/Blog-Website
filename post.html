@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Blog Website</title>
+  <meta name="title" content="Welcome to blog Website">
+  <meta name="description" content="This is a blog html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+        .blog-card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+        }
+        .card-banner img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .comment-section {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.comment-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.comment-form textarea {
+    resize: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    height: 100px;
+}
+
+.comment-form button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.comment-form button:hover {
+    background: #0056b3;
+}
+
+.comments .comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.comment .comment-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #007bff;
+}
+
+.comment .comment-text {
+    margin-bottom: 10px;
+    color: #333;
+}
+    </style>
+
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+
+  
+
+  <div class="overlay" data-overlay data-search-toggler></div>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="home">
+        <div class="container">
+
+          <h1 class="h1 hero-title">
+            <strong class="strong">Welcome to</strong>Blog Website
+          </h1>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FEATURED POST
+      -->
+
+      <div class="blog-card">
+        <figure class="card-banner img-holder">
+            <img id="cardImage" src="" alt="" class="img-cover">
+        </figure>
+        <div class="card-content">
+            <h3 class="h4" id="cardTitle"></h3>
+            <p class="card-text" id="cardText"></p>
+        </div>
+    </div>
+
+    <div class="comment-section">
+        <h2>Comments</h2>
+        <div class="comment-form">
+            <textarea id="commentText" placeholder="Write a comment..."></textarea>
+            <button type="button" onclick="submitComment()">Submit</button>
+        </div>
+        <div class="comments" id="comments">  
+        </div>
+    </div>
+
+    <script>
+        function submitComment() {
+            const commentText = document.getElementById('commentText').value;
+            if (commentText.trim() !== "") {
+                const comment = document.createElement('div');
+                comment.classList.add('comment');
+                comment.innerHTML = `
+                    <p class="comment-author">Anonymous</p>
+                    <p class="comment-text">${commentText}</p>
+                `;
+                document.getElementById('comments').appendChild(comment);
+                document.getElementById('commentText').value = "";
+            }
+        }
+    </script>
+
+      <section class="section recent" aria-label="recent post">
+        <div class="container">
+
+          <div class="title-wrapper">
+
+            <h2 class="h2 section-title">
+            <strong class="strong">Categories</strong>
+            </h2>
+
+            
+
+          </div>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                  <img src="./assets/images/technology.jpg" style="height: 100%;width: 100%;" loading="lazy"
+                    alt="Creating is a privilege but it’s also a gift" class="img-cover">
+
+                  
+                </figure>
+
+                <div class="card-content">
+
+                  
+
+                  <h3 class="h4">
+                    <a href="index.html" class="card-title hover:underline">
+                      Technology
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    Nullam vel lectus vel velit pellentesque dignissim nec id magna. Cras molestie ornare quam at
+                    semper. Proin a ipsum ex.
+                    Curabitur eu venenatis justo. Nullam felis augue, imperdiet at sodales a, sollicitudin nec risus.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                  <img src="./assets/images/cars.jpg" style="height: 100%;width: 100%;" loading="lazy"
+                    alt="Being unique is better than being perfect" class="img-cover">
+
+                  
+                </figure>
+
+                <div class="card-content">
+
+                  
+
+                  <h3 class="h4">
+                    <a href="cars.html" class="card-title hover:underline">
+                      Cars
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    Nam in pretium dui. Phasellus dapibus, mi at molestie cursus, neque eros aliquet nisi, non
+                    efficitur nisi est nec mi.
+                    Nullam semper, ligula a luctus ornare, leo turpis fermentum lectus, quis volutpat urna orci a
+                    lectus. Duis et odio
+                    lobortis, auctor justo ut, egestas magna.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                  <img src="./assets/images/cooking.jpg" style="height: 100%;width: 100%;" loading="lazy"
+                    alt="Now we’re getting somewhere" class="img-cover">
+
+                  
+                </figure>
+
+                <div class="card-content">
+
+                  
+
+                  <h3 class="h4">
+                    <a href="cooking.html" class="card-title hover:underline">
+                   Cooking
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec
+                    volutpat rhoncus quam,
+                    a feugiat elit gravida eget. Curabitur id pharetra ligula. Integer porttitor suscipit ante ac
+                    faucibus. Sed a enim non
+                    enim viverra pulvinar vel diam ut lorem congue feugiat.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn">Load more</button>
+
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <script>
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function displayCardDetails() {
+            const title = getQueryParameter('title');
+            const text = getQueryParameter('text');
+            const imageUrl = getQueryParameter('image');
+
+            if (title && text && imageUrl) {
+                document.getElementById('cardTitle').innerText = title;
+                document.getElementById('cardText').innerText = text;
+                document.getElementById('cardImage').src = imageUrl;
+                document.getElementById('cardImage').alt = title;
+            }
+        }
+
+        window.onload = displayCardDetails;
+    </script>
+
+
+  <script src="./assets/js/script.js" defer></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
